@@ -1,4 +1,5 @@
-﻿namespace ValidCardRunTask
+﻿
+namespace ValidCardRunTask
 {
     internal class Program
     {
@@ -15,10 +16,23 @@
             You should use meaningful variable name(s) in your answer
             */
 
+           
             int[] cards = dealCards();
             bool gameWon = false;
             // add your code here
-
+            while (gameWon == false)
+            {
+                for (int i = 0; i < 95; i++)
+                {
+                    if (cards[i + 1] == cards[i] + 1 && cards[i + 2] == cards[i + 1] + 1 && cards[i + 3] == cards[i + 2] + 1 && cards[i + 4] == cards[i + 3] + 1 && cards[i + 5] == cards[i + 4] + 1)
+                    {
+                        gameWon = true;
+                        Console.WriteLine("you won!");
+                    }
+                }
+                Console.WriteLine("unlucky");
+                break;
+            }
 
             // end of your code
             Console.WriteLine(gameWon);
